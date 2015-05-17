@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+  script(src='/javascripts/controllers.js')
+  h1= title
+  div(id="head-error", class="alert alert-danger")
+  div(id="head-info", class="alert alert-info")
+  div(class="noneStyle container" ng-controller='user.view')
+   table(class="table table-borderd")
+    tr
+     td Username
+     td Name
+     td Email address
+     td
+    tr
+     td 
+      input(type="text", ng-model="txt_username", class="form-control", required)
+      div(style="color:red")
+     td 
+      input(type="text", ng-model="txt_name", class="form-control", required) 
+      div(style="color:red")	  
+     td 
+      input(type="email", ng-model="txt_email", class="form-control", required)
+      div(style="color:red")	  
+     td 
+      input(type="button", value="Add New", ng-click="addNew()", class="btn btn-primary") 	
+   hr
+   div(class="col-md-6", ng-repeat='item in Users', style="border: solid thin rgba(255,255,255,0.1);border-radius:5px")   
+    span(class="btn-danger pull-right glyphicon glyphicon-remove",ng-click="removeItem(item.$id)")
+    div(ng-repeat='item1 in item', align="center")
+     img(class="img-circle", src='//icongal.com/gallery/image/37718/business_man_man_consultant_male_administrator_user.png')
+     h3 {{item1.Name}}
+     hr
+     p
+      b Username : 
+      {{item.$id}}
+     p
+      b Email address : 
+      {{item1.EMail}}

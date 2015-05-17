@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:#333;
+  color: gainsboro;
+}
+
+a {
+  color: #00B7FF;
+}
+.noneStyle li{
+  list-style:none
+}
+#head-error{
+	display:none;
+}
+#head-info{
+	display:none;
+}
